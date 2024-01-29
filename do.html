@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="do.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="first">
+        <div class="haut">
+          <button>Ajouter Tache</button>
+          <input
+            type="text"
+            list="choix"
+            id="selection"
+            placeholder="Catégorie"
+          />
+          <datalist id="choix">
+            <option value="Academique"></option>
+            <option value="Extra-Academique"></option>
+            <option value="Distraction"></option>
+          </datalist>
+          <input type="text" placeholder="Titre" />
+          <input type="date" />
+          <input type="text" placeholder="Description" />
+          <input type="text" list="niveau" id="types" placeholder="Statut" />
+          <datalist id="niveau">
+            <option value="Nouveau"></option>
+            <option value="En cours"></option>
+            <option value="Terminer"></option>
+          </datalist>
+          <button id="ajouter">Ajouter</button>
+        </div>
+        <div class="bas">
+            <div class="chart">
+                <canvas id="beignetChart"></canvas>
+            </div>
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          <script>
+            var ctx = document.getElementById('beignetChart').getContext('2d');
+            var beignetChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow',],
+                    datasets: [{
+                        label: 'Beignet Chart',
+                        data: [12, 19, 3,],
+                        backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)'],
+                        borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        </script>
+        </div>
+      </div>
+
+      <div class="second">
+        <div class="un">
+            <p>Listes des taches</p>
+            <div class="tab">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Titre</th>
+                        <th scope="col">Categorie</th>
+                        <th scope="col">Operation</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <div class="deux">
+            <div class="uno">
+                <p>Description</p>
+            </div>
+            <div class="dos"></div>
+        </div>
+      </div>
+    </div>
+    <script src="do.js"></script>
+  </body>
+</html>
