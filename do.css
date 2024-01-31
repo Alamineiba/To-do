@@ -82,11 +82,19 @@ body{
 }
 
 thead{
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     background: #5F9EA0;
     color: #fff;
     border: 3px solid red;
+}
+
+th{
+    
+    border: yellowgreen;
+    padding: 10px;
 }
 
 tbody{
